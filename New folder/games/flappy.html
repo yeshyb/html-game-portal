@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Flappy Square</title></head>
+<body>
+  <h3>Flappy Square (Placeholder)</h3>
+  <p>Score: <span id="score">0</span></p>
+  <button onclick="increaseScore()">Click Me</button>
+  <script>
+    let score = 0;
+    function increaseScore() {
+      score++;
+      document.getElementById("score").innerText = score;
+      const user = localStorage.getItem("currentUser");
+      const users = JSON.parse(localStorage.getItem("users"));
+      if (score > users[user]["flappy"]) {
+        users[user]["flappy"] = score;
+        localStorage.setItem("users", JSON.stringify(users));
+      }
+    }
+  </script>
+</body>
+</html>

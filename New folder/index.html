@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter username" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="main-container" style="display: none;">
+    <div id="nav">
+      <h3 id="welcome"></h3>
+      <button onclick="showGame('flappy')">Flappy Square</button>
+      <button onclick="showGame('clicker')">Coin Clicker</button>
+      <button onclick="showGame('match3')">Match-3</button>
+      <button onclick="showGame('platformer')">Platformer</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <iframe id="game-frame" src="games/flappy.html"></iframe>
+    <div id="scoreboard">
+      <h4>Your Scores</h4>
+      <ul id="score-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
